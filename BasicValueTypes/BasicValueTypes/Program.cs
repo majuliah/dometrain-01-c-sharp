@@ -1,52 +1,51 @@
-﻿
+﻿// Date and time can be stored in a DateTime variable
+// Dates can be assigned to a DateOnly variable
+// Times can be assigned to a TimeOnly variable
 
-// A boolean is a data type that can only have two values: true or false
-// A boolean in C# is 1 bit or 1 byte
+// We can declare a DateTime variable
+DateTime myDateTime;
 
-// we can declare a boolean variable
-bool myBool;
-bool my_bool;
-bool MyBool;
+// We can declate a DateOnly variable
+DateOnly myDateOnly;
 
-// we can assign a value to a boolean variable
-myBool = true;
-my_bool = false;
+// We can declare a TimeOnly variable
+TimeOnly myTimeOnly;
 
-// we can declare and assign in one line    
-bool coolBool = false;
+// we can assign a value to these variables
+myDateTime = DateTime.Now; // current date and time
+myDateOnly = new DateOnly(2026, 8, 21); // current date
+myTimeOnly = new TimeOnly(12, 0, 0); // current time  
 
-// we can re-assign the value of a boolean variable
-coolBool = true;
+// we can declare and assign in one line
+DateTime coolDateTime = DateTime.Now;
+DateOnly coolDateOnly = new DateOnly(2026, 08, 22);
+TimeOnly coolTimeOnly = new TimeOnly(12, 0, 0);
 
-// we can do boolean logic with these variables
-bool trueAndFalse = true && false; // false
-bool trueAndTrue = true && true; // true
-bool falseAndFalse = false && false; // false
+// we can re-assign the value of these variables
+myDateTime = DateTime.Now;
+myDateOnly = new DateOnly(2026, 8, 23);
+myTimeOnly = new TimeOnly(12, 0, 0);
 
-// we can do boolean logic with the OR operator ||
-bool trueOrFalse = true || false; // true
-bool trueOrTrue = true || true; // true
-bool falseOrFalse = false || false;
+// Dates and Times are complex... consider 
+// that we haven't factores in time zones, daylight savings, leap years, etc.
 
-// we can do boolean logic with the NOT operator !
-bool notTrue = !true; // false
-bool notFalse = !false; // true
+// we can make a DateTime variable out of
+// a DateOnly and a TimeOnly variable
+DateTime dateTimeFromCombination = new DateTime(myDateOnly, myTimeOnly);
 
-// the results of boolean logic
-// as we see with string interpolation:
-Console.WriteLine($"true && false = {trueAndFalse}");
-Console.WriteLine($"true && true = {trueAndTrue}");
-Console.WriteLine($"false && false = {falseAndFalse}");
-Console.WriteLine($"true || false = {trueOrFalse}");
-Console.WriteLine($"true || true = {trueOrTrue}");
-Console.WriteLine($"false || false = {falseOrFalse}");
-Console.WriteLine($"!true = {notTrue}");
-Console.WriteLine($"!false = {notFalse}");
-#endregion
+// let's print out the values of our variables
+Console.WriteLine($"DateTime: {myDateTime}");
+Console.WriteLine($"DateOnly: {myDateOnly}");
+Console.WriteLine($"TimeOnly: {myTimeOnly}");
+Console.WriteLine($"Combined DateTime: {dateTimeFromCombination}");
 
 
 
-# region 0.1 Strings
+
+
+
+
+#region 0.1 Strings
 static void Strings()
 {
     // Keep your eyes peeled:
@@ -173,4 +172,48 @@ Console.WriteLine($"Double difference: {difference}");
 Console.WriteLine($"Float product: {product}");
 Console.WriteLine($"Float quotient: {quotient}");
 
+#endregion
+#region 0.3 Booleans
+// A boolean is a data type that can only have two values: true or false
+// A boolean in C# is 1 bit or 1 byte
+
+// we can declare a boolean variable
+bool myBool;
+bool my_bool;
+bool MyBool;
+
+// we can assign a value to a boolean variable
+myBool = true;
+my_bool = false;
+
+// we can declare and assign in one line    
+bool coolBool = false;
+
+// we can re-assign the value of a boolean variable
+coolBool = true;
+
+// we can do boolean logic with these variables
+bool trueAndFalse = true && false; // false
+bool trueAndTrue = true && true; // true
+bool falseAndFalse = false && false; // false
+
+// we can do boolean logic with the OR operator ||
+bool trueOrFalse = true || false; // true
+bool trueOrTrue = true || true; // true
+bool falseOrFalse = false || false;
+
+// we can do boolean logic with the NOT operator !
+bool notTrue = !true; // false
+bool notFalse = !false; // true
+
+// the results of boolean logic
+// as we see with string interpolation:
+Console.WriteLine($"true && false = {trueAndFalse}");
+Console.WriteLine($"true && true = {trueAndTrue}");
+Console.WriteLine($"false && false = {falseAndFalse}");
+Console.WriteLine($"true || false = {trueOrFalse}");
+Console.WriteLine($"true || true = {trueOrTrue}");
+Console.WriteLine($"false || false = {falseOrFalse}");
+Console.WriteLine($"!true = {notTrue}");
+Console.WriteLine($"!false = {notFalse}");
 #endregion
