@@ -1,4 +1,28 @@
-﻿// the most basic type of control flow is the if statement,
+﻿// ternary operators are used to assign a
+// value to a variable based on a condition.
+// The syntax is: (condition) ? value_if_true : value_if_false;
+
+int x = 10;
+string result = (x > 5) 
+    ? "x is greater than 5" 
+    : "x is less than or equal to 5";
+Console.WriteLine(result);
+
+result = x == 10 
+    ? "x is equal to 10" 
+    : "x is not equal to 10";
+Console.WriteLine(result);
+
+result = x < 20
+    ? "x is less than 20"
+    : "x is greater than or equal to 20";
+Console.WriteLine(result);
+
+
+
+
+#region 0.1 if statements
+// the most basic type of control flow is the if statement,
 // which allows us to execute a block of code only if a certain
 // condition is true. If the condition is false, the block of code is skipped.
 
@@ -101,3 +125,5 @@ else
 {
     Console.WriteLine("The number is between 1 and 5");
 }
+
+#endregion
