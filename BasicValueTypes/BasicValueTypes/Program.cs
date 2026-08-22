@@ -1,51 +1,4 @@
-﻿// Date and time can be stored in a DateTime variable
-// Dates can be assigned to a DateOnly variable
-// Times can be assigned to a TimeOnly variable
-
-// We can declare a DateTime variable
-DateTime myDateTime;
-
-// We can declate a DateOnly variable
-DateOnly myDateOnly;
-
-// We can declare a TimeOnly variable
-TimeOnly myTimeOnly;
-
-// we can assign a value to these variables
-myDateTime = DateTime.Now; // current date and time
-myDateOnly = new DateOnly(2026, 8, 21); // current date
-myTimeOnly = new TimeOnly(12, 0, 0); // current time  
-
-// we can declare and assign in one line
-DateTime coolDateTime = DateTime.Now;
-DateOnly coolDateOnly = new DateOnly(2026, 08, 22);
-TimeOnly coolTimeOnly = new TimeOnly(12, 0, 0);
-
-// we can re-assign the value of these variables
-myDateTime = DateTime.Now;
-myDateOnly = new DateOnly(2026, 8, 23);
-myTimeOnly = new TimeOnly(12, 0, 0);
-
-// Dates and Times are complex... consider 
-// that we haven't factores in time zones, daylight savings, leap years, etc.
-
-// we can make a DateTime variable out of
-// a DateOnly and a TimeOnly variable
-DateTime dateTimeFromCombination = new DateTime(myDateOnly, myTimeOnly);
-
-// let's print out the values of our variables
-Console.WriteLine($"DateTime: {myDateTime}");
-Console.WriteLine($"DateOnly: {myDateOnly}");
-Console.WriteLine($"TimeOnly: {myTimeOnly}");
-Console.WriteLine($"Combined DateTime: {dateTimeFromCombination}");
-
-
-
-
-
-
-
-#region 0.1 Strings
+﻿#region 0.1 Strings
 static void Strings()
 {
     // Keep your eyes peeled:
@@ -94,6 +47,7 @@ static void Strings()
     // we need to end our lines of code with a semicolon ;
 }
 #endregion
+
 #region 0.2 Integers
 // Integers are whole numbers
 // An integer in C# is 32 bits or 4 bytes
@@ -131,6 +85,7 @@ Console.WriteLine($"5 / 10 = {quotient}");
 
 // we will need to use another data type to help us here!
 #endregion
+
 #region 0.3 Floats and Doubles
 // Floating point numbers are numbers with decimal points
 // A float in c# is 32 bits or 4 bytes
@@ -173,6 +128,7 @@ Console.WriteLine($"Float product: {product}");
 Console.WriteLine($"Float quotient: {quotient}");
 
 #endregion
+
 #region 0.3 Booleans
 // A boolean is a data type that can only have two values: true or false
 // A boolean in C# is 1 bit or 1 byte
@@ -216,4 +172,82 @@ Console.WriteLine($"true || true = {trueOrTrue}");
 Console.WriteLine($"false || false = {falseOrFalse}");
 Console.WriteLine($"!true = {notTrue}");
 Console.WriteLine($"!false = {notFalse}");
+#endregion
+
+#region 0.4 DateTime, DateOnly, TimeOnly
+// Date and time can be stored in a DateTime variable
+// Dates can be assigned to a DateOnly variable
+// Times can be assigned to a TimeOnly variable
+
+// We can declare a DateTime variable
+DateTime myDateTime;
+
+// We can declate a DateOnly variable
+DateOnly myDateOnly;
+
+// We can declare a TimeOnly variable
+TimeOnly myTimeOnly;
+
+// we can assign a value to these variables
+myDateTime = DateTime.Now; // current date and time
+myDateOnly = new DateOnly(2026, 8, 21); // current date
+myTimeOnly = new TimeOnly(12, 0, 0); // current time  
+
+// we can declare and assign in one line
+DateTime coolDateTime = DateTime.Now;
+DateOnly coolDateOnly = new DateOnly(2026, 08, 22);
+TimeOnly coolTimeOnly = new TimeOnly(12, 0, 0);
+
+// we can re-assign the value of these variables
+myDateTime = DateTime.Now;
+myDateOnly = new DateOnly(2026, 8, 23);
+myTimeOnly = new TimeOnly(12, 0, 0);
+
+// Dates and Times are complex... consider 
+// that we haven't factores in time zones, daylight savings, leap years, etc.
+
+// we can make a DateTime variable out of
+// a DateOnly and a TimeOnly variable
+DateTime dateTimeFromCombination = new DateTime(myDateOnly, myTimeOnly);
+
+// let's print out the values of our variables
+Console.WriteLine($"DateTime: {myDateTime}");
+Console.WriteLine($"DateOnly: {myDateOnly}");
+Console.WriteLine($"TimeOnly: {myTimeOnly}");
+Console.WriteLine($"Combined DateTime: {dateTimeFromCombination}");
+#endregion
+
+#region 0.5 Type Conversion
+// How do we convert between these types?
+// We can "cast" them, wich means to convert them to a different type.
+
+// we can implicitly cast betwen compatible types
+// for example, we can cast an int to a double
+
+int myIntNew = 5;
+double myDoubleNew = myIntNew; // implicit cast
+Console.WriteLine("Implicit cast:");
+Console.WriteLine($"Int: {myIntNew}, Double: {myDoubleNew}" );
+
+// we can also explicitly cast between compatible types
+// for example, we can cast a double to an int
+myDoubleNew = 5.7;
+myIntNew = (int)myDouble; // explicit cast
+Console.WriteLine("Explicit cast:");
+Console.WriteLine($"Double: {myDouble}, Int: {myInt}" );
+
+// we cannot cast between incompatible types, such as a string and an int
+    string myString = "5";
+// int myInt = (int)myString; // this would cause a compile-time error
+
+// we can also convert between types that are not compatible 
+//for example, we can convert a string to an int
+myInt = int.Parse(myString); // this will throw an exception if the string is not a valid int
+Console.WriteLine("Parse:");
+Console.WriteLine($"myString: {myString}, myInt: {myInt}" );
+
+myString = "6.6";
+myDouble = double.Parse(myString); // this will throw an exception if the string is not a valid double
+Console.WriteLine("Parse:");
+Console.WriteLine($"myString: {myString}, myDouble: {myDouble}" );
 #endregion
