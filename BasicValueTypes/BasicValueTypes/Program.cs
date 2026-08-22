@@ -1,42 +1,50 @@
-﻿// Floating point numbers are numbers with decimal points
-// A float in c# is 32 bits or 4 bytes
-// The range of a float is from 1.5 x 10^-45 to 3.4 x 10^38
-// A double in c# is 64 bits or 8 bytes
-// The range of a double is from 5.0 x 10^-324 to 1.7 x 10^308
+﻿
 
-// we can declare a float variable
-float myFloat;
-float my_float;
-float MyFloat;
+// A boolean is a data type that can only have two values: true or false
+// A boolean in C# is 1 bit or 1 byte
 
-// We can declare a double variable
-double myDouble;
-double my_double;
-double MyDouble;
+// we can declare a boolean variable
+bool myBool;
+bool my_bool;
+bool MyBool;
 
-// we can assign a value to these variables
-myFloat = 5.5f; // we need to use the f suffix to indicate that this is a float
-myDouble = 5.5; // we don't need a suffix for doubles
+// we can assign a value to a boolean variable
+myBool = true;
+my_bool = false;
 
 // we can declare and assign in one line    
-float coolFloat = 15.5f;
-double coolDouble = 15.5;
+bool coolBool = false;
 
-// we can re-assign the value of these variables
-myFloat = 10.5f;
-myDouble = 10.5;
+// we can re-assign the value of a boolean variable
+coolBool = true;
 
-// we can do math with floats and doubles
-float floatSum = 5.5f + 10.5f;
-double difference = 10.5 - 5.5;
-float product = 5.5f * 10.5f;
-float quotient = 5.5f / 10.5f;
+// we can do boolean logic with these variables
+bool trueAndFalse = true && false; // false
+bool trueAndTrue = true && true; // true
+bool falseAndFalse = false && false; // false
 
-// we can see the results of our math with string interpolation
-Console.WriteLine($"Float sum: {floatSum}");
-Console.WriteLine($"Double difference: {difference}");
-Console.WriteLine($"Float product: {product}");
-Console.WriteLine($"Float quotient: {quotient}");
+// we can do boolean logic with the OR operator ||
+bool trueOrFalse = true || false; // true
+bool trueOrTrue = true || true; // true
+bool falseOrFalse = false || false;
+
+// we can do boolean logic with the NOT operator !
+bool notTrue = !true; // false
+bool notFalse = !false; // true
+
+// the results of boolean logic
+// as we see with string interpolation:
+Console.WriteLine($"true && false = {trueAndFalse}");
+Console.WriteLine($"true && true = {trueAndTrue}");
+Console.WriteLine($"false && false = {falseAndFalse}");
+Console.WriteLine($"true || false = {trueOrFalse}");
+Console.WriteLine($"true || true = {trueOrTrue}");
+Console.WriteLine($"false || false = {falseOrFalse}");
+Console.WriteLine($"!true = {notTrue}");
+Console.WriteLine($"!false = {notFalse}");
+#endregion
+
+
 
 # region 0.1 Strings
 static void Strings()
@@ -123,4 +131,46 @@ Console.WriteLine($"5 / 10 = {quotient}");
 // Why is it 0?! 
 
 // we will need to use another data type to help us here!
+#endregion
+#region 0.3 Floats and Doubles
+// Floating point numbers are numbers with decimal points
+// A float in c# is 32 bits or 4 bytes
+// The range of a float is from 1.5 x 10^-45 to 3.4 x 10^38
+// A double in c# is 64 bits or 8 bytes
+// The range of a double is from 5.0 x 10^-324 to 1.7 x 10^308
+
+// we can declare a float variable
+float myFloat;
+float my_float;
+float MyFloat;
+
+// We can declare a double variable
+double myDouble;
+double my_double;
+double MyDouble;
+
+// we can assign a value to these variables
+myFloat = 5.5f; // we need to use the f suffix to indicate that this is a float
+myDouble = 5.5; // we don't need a suffix for doubles
+
+// we can declare and assign in one line    
+float coolFloat = 15.5f;
+double coolDouble = 15.5;
+
+// we can re-assign the value of these variables
+myFloat = 10.5f;
+myDouble = 10.5;
+
+// we can do math with floats and doubles
+float floatSum = 5.5f + 10.5f;
+double difference = 10.5 - 5.5;
+float product = 5.5f * 10.5f;
+float quotient = 5.5f / 10.5f;
+
+// we can see the results of our math with string interpolation
+Console.WriteLine($"Float sum: {floatSum}");
+Console.WriteLine($"Double difference: {difference}");
+Console.WriteLine($"Float product: {product}");
+Console.WriteLine($"Float quotient: {quotient}");
+
 #endregion
