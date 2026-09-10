@@ -49,3 +49,41 @@ Console.WriteLine("This is a method on the Console class!");
 // well see why in a later lesson!
 
 // objects are "reference types" in c#
+// and up until now we've only been working with
+// "value types" like int, double, and bool
+// ... except for our collections!
+
+OurClass objetc1 = new OurClass(); // new reference
+OurClass objetc2 = new OurClass(); // new reference
+OurClass objetc3 = objetc1; // same reference as objetc1
+
+Console.WriteLine("Object1 == object2:");
+Console.WriteLine(object1 == object2); // false
+Console.WriteLine("Object1 == object3:");
+Console.WriteLine(object1 == object3); // true
+
+// collections are very the same!
+List<int> list1 = new List<int>() { 1, 2, 3}; 
+List<int> list2 = new List<int>() { 1, 2, 3};
+
+Console.WriteLine("List1 == list2:");
+Console.WriteLine(list1 == list2); // false
+
+// lets wrap up with re-examining our parameter passing
+// with value types and reference types!
+
+void ChangeValue(int value)
+{
+    value = 100;
+}   
+
+int myValue = 50;
+Console.WriteLine("myValue before ChangeValue: " + myValue);
+ChangeValue(myValue);
+Console.WriteLine("myValue after ChangeValue: " + myValue);
+
+
+
+
+
+
