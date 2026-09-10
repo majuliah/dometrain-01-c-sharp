@@ -82,3 +82,42 @@ PrintHeader2("Another Example!");
 
 
 #endregion
+
+#region Return Types
+
+// the difference between a method and function is that a function returns a value, while a method does not.
+// a return value is a value that is returnet from a method when its called.
+// methods with return types are called functions!!!!!
+// a method can only have one return value
+// and the return value must have the same type as the method
+
+// here is an example of a method with a return value
+int Add(int a, int b)
+{
+    return a + b;
+}
+
+// we can call the method like this
+int sum = Add(5, 10);
+
+// we can also call the method like this
+int x = 5;
+int y = 10;
+int sum2 = Add(x, y);
+
+// we can also call the method like this
+int sum3 = Add
+    (
+    Add(1, 2),
+    Add(x, y)
+    );
+
+// the return value must match the type of the method
+// so this would be an error
+//string Add(int a, int b)
+//{
+//    return a + b; // error: cannot convert int to string
+//}
+
+
+#endregion
