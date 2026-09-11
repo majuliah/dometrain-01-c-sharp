@@ -1,4 +1,6 @@
-﻿// object oriented programming is a programming paradigm
+﻿#region Intro and Reference Types
+/*
+// object oriented programming is a programming paradigm
 // that uses objects and classes in programming
 // we can structure a program by building related
 // properties and behaviors into individual objects
@@ -78,12 +80,108 @@ void ChangeValue(int value)
 }   
 
 int myValue = 50;
-Console.WriteLine("myValue before ChangeValue: " + myValue);
+Console.WriteLine("myValue before ChangeValue: " + myValue); // 50
 ChangeValue(myValue);
-Console.WriteLine("myValue after ChangeValue: " + myValue);
+Console.WriteLine("myValue after ChangeValue: " + myValue); // 50
+
+void ChangeReference(List<string> words)
+{
+words = new List<string>();
+words.Add("from");
+words.Add("Dev");
+words.Add("Leader");
+}
+
+List<string> myWords = new List<string> { "Hello", "World" };
+Console.WriteLine("myWords before ChangeReference:");
+Console.WriteLine(string.Join(" ", myWords)); // Hello World
+ChangeReference(myWords);
+Console.WriteLine("myWords after ChangeReference:");
+Console.WriteLine(string.Join(" ", myWords)); // Hello World from Dev Leader
+
+// this is because when we pass a value type to a method
+// we're passing a copy of the value but when we pass a
+// reference type to a method we're passing the reference!
+
+// in C# we can create a class by using the class keyword
+class OurClass4
+{
+
+}
+*/
+#endregion
 
 
+#region Fields and Properties
+// a field is a variable that is declared directly in a class or struct.
+// Fields are used to store data for an object. They can be public, private, protected, or internal, and they can have different data types.
+// here is how we declare a field in a class:
+class Person
+{
+    private string _name; // this is a field
+}
+
+// a field is a variable that is declared directly in a class.
+// we can give a field a value when we declate it
+class Person2
+{
+    private string _name = "John Doe"; // this is a field with a value
+}
+// what does private do in the above exemples?
+// "private" is an access modifier.
+// We saw public as an access modifier in the last lesson, but there are others as well.
+// "private" specifies that something is accessible only within the class
+class Person3
+{
+    private string _name;
+    public void SomeMe()
+    {
+        this._name = "John Doe"; // this is a field with a value
+    }
+}
+//we can access _name using a method!
+class Person4
+{
+    private string _name;
+    public string GetName()
+    {
+        return this._name;
+    }
+}
+Person4 nomeNovoPessoa = new Person4();
+Console.WriteLine(nomeNovoPessoa.GetName());
+
+// there are other access modifiers that we wont cover in this course
+
+// a property is a member that provides a flexible mechanism to
+// read, write, or compute the value of a private field.
+
+class Person5
+{
+    private string _name = "Mary";
+    public string Name 
+    {
+        get { return _name; } // this is the getter
+    }
+
+    public string Name2 => _name;
+    public string Name3 { get; } = "Mary"; // this is the getter with a default value
+    public string MutableName
+    {
+        get { return _name; } // this is the getter
+        set { _name = value; } // this is the setter
+    } 
+}
+Person5 johnWithProperty = new Person5();
+Console.WriteLine(johnWithProperty.Name);
+Console.WriteLine(johnWithProperty.Name2);
+Console.WriteLine(johnWithProperty.Name3);
+
+Console.WriteLine("Setting the name...");
+johnWithProperty.MutableName = "John Doe";
+Console.WriteLine(johnWithProperty.MutableName);
+
+Console.WriteLine(johnWithProperty.MutableName);
 
 
-
-
+#endregion
