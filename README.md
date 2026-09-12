@@ -1,12 +1,12 @@
 # Getting Started: C#
 
-> **Course:** Dometrain | Getting Started: C#
-> `Getting Started` · `From Zero To Hero` ·
+> **Course:** Dometrain | Getting Started: C#<br>
+> `Getting Started` · `From Zero To Hero` ·<br>
+> **Certificate:** [View certificate](https://dometrain.com/certificate/GpeiG59sj02IxQ/)
 
 This course provides a foundational look at **C#**, a strongly-typed programming language. It is designed to help learners understand the core concepts required to build programs, starting with how data is managed.
 
 ---
-
 ## Key Topics
 
 ### 01 · Understanding Variables
